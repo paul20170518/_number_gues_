@@ -1,0 +1,6 @@
+{
+  "name": "Guess Number Game",
+  "description": "A polished and interactive number guessing game (1-100) with animations and real-time feedback.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

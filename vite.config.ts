@@ -4,7 +4,7 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig({
-  base: '/-2026-5-07-/',
+  base: '/_number_gues_/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {

@@ -12,9 +12,9 @@ interface GameStatus {
 export default function App() {
   const [targetNumber, setTargetNumber] = useState<number>(0);
   const [userInput, setUserInput] = useState<string>('');
-  const [range, setRange] = useState({ min: 1, max: 100 });
+  const [range, setRange] = useState({ min: 51, max: 100 });
   const [status, setStatus] = useState<GameStatus>({
-    msg: '請輸入 1-100 之間的數字',
+    msg: '請輸入 51-100 之間的數字',
     count: 0,
     isGameOver: false,
     type: 'neutral',
@@ -23,12 +23,12 @@ export default function App() {
 
   // Initialize game
   const initGame = () => {
-    const randomNum = Math.floor(Math.random() * 100) + 1;
+    const randomNum = Math.floor(Math.random() * 50) + 51;
     setTargetNumber(randomNum);
     setUserInput('');
-    setRange({ min: 1, max: 100 });
+    setRange({ min: 51, max: 100 });
     setStatus({
-      msg: '新遊戲開始！猜一個 1-100 的數字',
+      msg: '新遊戲開始！猜一個 51-100 的數字',
       count: 0,
       isGameOver: false,
       type: 'neutral',
@@ -43,8 +43,8 @@ export default function App() {
   const handleGuess = () => {
     const guess = parseInt(userInput);
 
-    if (isNaN(guess) || guess < 1 || guess > 100) {
-      setStatus(prev => ({ ...prev, msg: '請輸入有效的 1-100 數字！', type: 'error' }));
+    if (isNaN(guess) || guess < 51 || guess > 100) {
+      setStatus(prev => ({ ...prev, msg: '請輸入有效的 51-100 數字！', type: 'error' }));
       triggerShake();
       return;
     }
